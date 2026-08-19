@@ -1,0 +1,104 @@
+/* ===== CSS RESET & VARIABLES ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #e6e4dc;
+  --black: #111111;
+  --blue: #4a6cf7;
+  --orange: #E84E1B;
+  --green: #2d7a5f;
+  --pink: #ff8a9e;
+  --lavender: #c9a5e8;
+  --dark-red: #8b3a62;
+  --light-blue: #7eb8f0;
+  --lime: #d4f57a;
+  
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  /* Dark Mobisa purple gradient environment */
+  background-color: #0b0512;
+  background-image: 
+    radial-gradient(circle at 20% 40%, rgba(46, 17, 71, 0.5), transparent 60%),
+    radial-gradient(circle at 80% 60%, rgba(35, 12, 54, 0.4), transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(55, 20, 80, 0.3), transparent 70%);
+  background-attachment: fixed;
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--lavender);
+  color: var(--black);
+}
+
+/* Lenis basic styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
