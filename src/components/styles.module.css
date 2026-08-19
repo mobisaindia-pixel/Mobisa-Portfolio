@@ -362,24 +362,34 @@
 @media (max-width: 768px) {
   .header {
     padding: 24px;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    position: relative; /* Instead of absolute to prevent overlap on mobile if it gets too tall */
+  }
+  .headerLeft {
+    justify-content: center;
   }
   .headerCenter {
     font-size: 2rem;
   }
   .headerRight {
-    display: none; /* Collapse nav on mobile for now */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
   .statementHeroSection {
     min-height: 85vh;
+    padding-top: 60px; /* Reduced offset since header is relative now */
   }
   .timeline {
     flex-direction: column;
-    gap: 48px;
+    gap: 40px; /* Reduced gap */
   }
   .timelineLine {
-    top: 0;
-    bottom: 0;
+    top: 24px;
+    bottom: 80px; /* Stop before reaching the very end */
     left: 24px;
     width: 1px;
     height: auto;
@@ -401,14 +411,50 @@
   .portraitCard {
     width: 180px;
   }
+  .portfolioSection {
+    padding: 40px 0 60px 0;
+  }
   .dynamicSection {
-    padding: 60px 24px 80px;
+    padding: 40px 24px 60px;
   }
   .videoGrid {
     flex-direction: column;
     gap: 24px;
+    height: auto; /* Allow items to stack naturally */
   }
   .videoCard:first-child {
     width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .videoCard:first-child .videoWrapper {
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
+  .videoCard:last-child {
+    width: 100%;
+  }
+  .videoCard:last-child .videoWrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .workflowSection {
+    padding: 60px 24px;
+  }
+  .workflowHeader {
+    margin-bottom: 40px;
+  }
+  .ctaSection {
+    min-height: 60vh;
+  }
+  .killerStatement {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  .sectionHeading {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 40px;
+  }
+  .ctaHeadline {
+    font-size: clamp(2.5rem, 8vw, 4rem);
   }
 }
